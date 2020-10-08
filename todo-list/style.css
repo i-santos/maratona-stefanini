@@ -1,0 +1,7 @@
+.todo {
+  display: flex;
+}
+
+.todo label.done-true {
+    text-decoration: line-through;
+}

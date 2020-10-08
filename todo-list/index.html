@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="app" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maratona Stefanini</title>
+
+    <!-- importar o angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+
+    <!-- importar o controller -->
+    <script src="todo-list.js"></script>
+
+    <!-- importar o estilo -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Lista de Tarefas</h1>
+    <div ng-controller="TodoListController as vm">
+      <div ng-repeat="todo in vm.todos" class="todo">
+        <input id="todo-{{ $index }}" type="checkbox" ng-model="todo.done" />
+        <label for="todo-{{ $index }}" class="done-{{ todo.done }}">{{ todo.text }}</label>
+      </div>
+
+      <div>
+        <input ng-model="vm.newTodo" type="text" />
+        <button ng-click="vm.add(vm.newTodo)">Add</button>
+      </div>
+    </div>
+  </body>
+</html>

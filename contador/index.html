@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="app" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contador</title>
+    <!-- importar o angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+
+    <script src="app.js"></script>
+  </head>
+  <body ng-controller="ContadorController as vm">
+    <p>Contador: {{ vm.count }}</p>
+    <button ng-click="vm.decrease()">-</button>
+    <button ng-click="vm.add()">+</button>
+  </body>
+</html>
