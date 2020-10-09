@@ -1,25 +1,24 @@
-(function() {
-    "use strict";
+(function () {
+  "use strict";
 
-    angular
-        .module('app', [])
-        .controller('ContadorController', contadorController);
+  angular
+    .module("app", [])
+    .controller("ContadorController", contadorController);
 
-        function contadorController(){
-            var vm = this;
+  function contadorController() {
+    var vm = this;
 
-            vm.count = 0;
+    vm.count = 0;
 
-            vm.add = add;
-            vm.decrease = decrease;
+    vm.add = add;
+    vm.decrease = decrease;
 
-            function add() {
-                vm.count++;
-            }
+    function add() {
+      vm.count++;
+    }
 
-            function decrease() {
-                vm.count--;
-            }
-
-        }
-} ());
+    function decrease() {
+      vm.count--;
+    }
+  }
+})();

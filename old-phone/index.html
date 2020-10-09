@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html ng-app="app" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone</title>
+
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Teko:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div
+      ng-mouseup="release()"
+      class="phone noselect"
+      ng-controller="PhoneController as vm"
+    >
+      <div class="display">
+        <p>{{ display + currentChar }}</p>
+      </div>
+      <div class="controls">
+        <div class="button left">-</div>
+        <!-- Arrow Buttons -->
+        <div class="nav" ng-class="navClass">
+          <div class="arrow up" ng-mousedown="nav.up = true">
+            <i class="fa fa-angle-up"></i>
+          </div>
+          <div class="arrow up-right" ng-mousedown="nav.upRight = true"></div>
+          <div class="arrow right" ng-mousedown="nav.right = true">
+            <i class="fa fa-angle-right"></i>
+          </div>
+          <div
+            class="arrow down-right"
+            ng-mousedown="nav.downRight = true"
+          ></div>
+          <div class="arrow down" ng-mousedown="nav.down = true">
+            <i class="fa fa-angle-down"></i>
+          </div>
+          <div class="arrow down-left" ng-mousedown="nav.downLeft = true"></div>
+          <div class="arrow left" ng-mousedown="nav.left = true">
+            <i class="fa fa-angle-left"></i>
+          </div>
+          <div class="arrow up-left" ng-mousedown="nav.upLeft = true"></div>
+          <div class="menu"></div>
+        </div>
+        <div class="button right">-</div>
+      </div>
+
+      <!-- Keyboard -->
+      <div class="buttons">
+        <div ng-click="keyboardClick('1')" class="button">
+          <div class="digit">1</div>
+          <div class="symbol">&#9903;</div>
+        </div>
+        <div ng-click="keyboardClick('2')" class="button">
+          <div class="digit">2</div>
+          <div class="symbol">abc</div>
+        </div>
+        <div ng-click="keyboardClick('3')" class="button">
+          <div class="digit">3</div>
+          <div class="symbol">def</div>
+        </div>
+        <div ng-click="keyboardClick('4')" class="button">
+          <div class="digit">4</div>
+          <div class="symbol">ghi</div>
+        </div>
+        <div ng-click="keyboardClick('5')" class="button">
+          <div class="digit">5</div>
+          <div class="symbol">jkl</div>
+        </div>
+        <div ng-click="keyboardClick('6')" class="button">
+          <div class="digit">6</div>
+          <div class="symbol">mno</div>
+        </div>
+        <div ng-click="keyboardClick('7')" class="button">
+          <div class="digit">7</div>
+          <div class="symbol">pqrs</div>
+        </div>
+        <div ng-click="keyboardClick('8')" class="button">
+          <div class="digit">8</div>
+          <div class="symbol">tuv</div>
+        </div>
+        <div ng-click="keyboardClick('9')" class="button">
+          <div class="digit">9</div>
+          <div class="symbol">wxyz</div>
+        </div>
+        <div ng-click="keyboardClick('*')" class="button">
+          <div class="digit">*</div>
+          <div class="symbol">+</div>
+        </div>
+        <div ng-click="keyboardClick('0')" class="button">
+          <div class="digit">0</div>
+          <div class="symbol">_</div>
+        </div>
+        <div ng-click="keyboardClick('#')" class="button">
+          <div class="digit">#</div>
+          <div class="symbol">&#8679;</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

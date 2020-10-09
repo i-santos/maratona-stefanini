@@ -1,0 +1,176 @@
+.phone {
+  width: 540px;
+  display: flex;
+  flex-direction: column;
+  background-color: #222222;
+  border-radius: 30px;
+  border-color: #212223;
+  border: 10px solid #212223;
+  overflow: hidden;
+  padding: 10px;
+  position: relative;
+}
+
+.display {
+  width: 100%;
+  height: 320px;
+  background: linear-gradient(to bottom right, #94a582, #76a37c);
+  font-family: "Press Start 2P";
+  font-size: 32px;
+  box-sizing: border-box;
+  padding: 30px;
+  border-radius: inherit inherit 0 0;
+  word-wrap: break-word;
+}
+
+.controls {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+}
+.controls .left,
+.controls .right {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  font-size: 100px;
+}
+.controls .nav {
+  flex: 2;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 3fr 1fr;
+  grid-template-areas:
+    "up-left up up-right"
+    "left menu right"
+    "down-left down down-right";
+  border: 4px solid #000000;
+  border-left: 4px solid #000000;
+  border-bottom: 4px solid #000000;
+  margin: 5px 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.controls .nav.up-active {
+  border-top-width: 2px;
+  border-bottom-width: 6px;
+}
+.controls .nav.up-right-active {
+  border-top-width: 2px;
+  border-bottom-width: 6px;
+  border-right-width: 2px;
+  border-left-width: 6px;
+}
+.controls .nav.right-active {
+  border-right-width: 2px;
+  border-left-width: 6px;
+}
+.controls .nav.down-right-active {
+  border-right-width: 2px;
+  border-top-width: 6px;
+  border-left-width: 6px;
+  border-bottom-width: 2px;
+}
+.controls .nav.down-active {
+  border-top-width: 6px;
+  border-bottom-width: 2px;
+}
+.controls .nav.down-left-active {
+  border-top-width: 6px;
+  border-bottom-width: 2px;
+  border-right-width: 6px;
+  border-left-width: 2px;
+}
+.controls .nav.left-active {
+  border-right-width: 6px;
+  border-left-width: 2px;
+}
+.controls .nav.up-left-active {
+  border-top-width: 2px;
+  border-bottom-width: 6px;
+  border-right-width: 6px;
+  border-left-width: 2px;
+}
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.arrow i {
+  font-size: 24px;
+}
+.up {
+  grid-area: up;
+}
+.up-right {
+  grid-area: up-right;
+}
+.right {
+  grid-area: right;
+}
+.down-right {
+  grid-area: down-right;
+}
+.down {
+  grid-area: down;
+}
+.down-left {
+  grid-area: down-left;
+}
+.left {
+  grid-area: left;
+}
+.up-left {
+  grid-area: up-left;
+}
+.menu {
+  grid-area: menu;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 10px;
+  font-family: "Teko";
+  padding: 10px 0;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+}
+
+.button {
+  display: flex;
+  border: 1px solid #000000;
+  border-left: 4px solid #000000;
+  border-bottom: 4px solid #000000;
+  border-radius: inherit;
+  background: #232526;
+  color: #ffffff;
+  padding: 1px 10px;
+  cursor: pointer;
+  overflow: hidden;
+}
+.button:active {
+  border: 2px solid #000000;
+}
+.button .digit {
+  flex: 1;
+  text-align: center;
+  font-size: 38px;
+  font-weight: bolder;
+  background: #232526;
+}
+.button .symbol {
+  flex: 1;
+  font-size: 19px;
+  align-self: flex-end;
+}
